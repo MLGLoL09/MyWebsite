@@ -8,7 +8,18 @@
 <body>
 
 <form id="meinFormular">
-    <button type="submit">Einblenden</button>
+    <button id="btn">Klicken</button>
+    <div id="popup">Hallo, ich bin ein Pop-up!</div>
+
+    <script>
+        const popup = document.querySelector("#popup");
+        popup.hidden = true; // Start ausgeblendet
+
+        document.querySelector("#btn").addEventListener("click", () => {
+            popup.hidden = !popup.hidden; // Umschalten
+        });
+    </script>
+
 </form>
 
 <p id="versteckterText" hidden>Dieser Text wird eingeblendet!</p>

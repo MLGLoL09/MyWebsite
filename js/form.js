@@ -21,14 +21,15 @@ function toggleModeSub(event) {
         alter--;
     }
 
-    if(alter < 14 || alter > 120) {
-        window.alert("Bitte geben Sie ein realistisches Alter an!");
+    if(alter < 14) {
+        window.alert("Sie müssen mindesten 14 Jahre alt sein!");
         return;
     }
 
     if (form.checkValidity()) {
         if (fs.hasAttribute('hidden')) {
             fs.removeAttribute('hidden');
+            form.setAttribute('hidden', '');
         }
     }
 

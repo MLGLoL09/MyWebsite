@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Calculator</title>
+    <!-- In der Datei functions.js werden alle Funktionen definiert
+        die für die Berechnungen, Überprüfungen und Speicherfunktionen
+        notwendig sind -->
+    <script src="functions.js" defer></script>
+
+    <!-- In der Datei variables.js werden alle globalen Variablen, sowie Konstante definiert
+        die für die Berechnungen, Überprüfungen und Speicherfunktionen
+        notwendig sind -->
+    <script src="variables.js" defer></script>
+</head>
+
+<body>
+<!--Hier startet der Rechner-->
+<h1>Willkommen beim JavaScript Rechner</h1>
+<button onclick="start()">Start</button>
+<script>
+    function start() {
+        fortsetzen = true;
+        while (fortsetzen == true) {
+            do {
+                wert1 = prompt("Bitte geben Sie den ersten Wert ein:");
+                wert1 = inZahlUmwandeln(wert1);
+            } while (isNaN(wert1));
+            do {
+                operation = prompt("Bitte geben Sie das Rechenzeichen ein.(+, -, /, *, ^, rt)");
+            } while (!validOperation(operation));
+            do {
+                wert2 = prompt("Bitte geben Sie den zweiten Wert ein:");
+                wert2 = inZahlUmw
+                andeln(wert2);
+            } while (isNaN(wert2)|| wert2 == null);
+            ergebnis = berechne(wert1, wert2, operation);
+            window.alert(ergebnis);
+            auswahl = prompt('Wollen Sie noch eine Rechnung machen oder die rechnungen anzeigen lassen? "rechnen" oder "anzeigen"');
+            if (wert1 !== NaN && wert2 !== NaN && operation !== null && ergebnis !== null) {
+                speicherInArray(wert1, wert2, operation, ergebnis);
+            }
+            neueRechnungOdUebersicht(auswahl);
+        }
+    }
+</script>
+
+</body>
+
+</html>
