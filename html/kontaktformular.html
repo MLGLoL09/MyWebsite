@@ -6,6 +6,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script defer src="../js/script.js"></script>
     <script defer src="../js/form.js"></script>
+    <script defer src="../js/copypaste.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -77,17 +78,21 @@
                     <input type="date" id="Geburtstag" class="border rounded w-100 bg-warning" required>
                 </div>
             </div>
-            <div class="row pt-3">
-                <div class="col-md-6">
-                    <label for="betreff" class="">Betreff*</label>
-                    <input type="text" name="Betreff" id="betreff" class="w-100 border bg-warning rounded">
-                </div>
-                <div class="col-6">
-                    <label for="anl" class="">Anliegen*</label>
-                    <textarea name="Anl" id="anl" class="w-100 border rounded bg-warning"></textarea>
-                </div>
+        <div class="row pt-3">
+            <div class="col-md-6">
+                <label for="betreff" class="">Betreff*</label>
+                <input type="text" name="Betreff" id="betreff" class="w-100 border bg-warning rounded">
             </div>
-            <div class="row pt-3">
+            <div class="col-6">
+                <label for="anl" class="">Anliegen*</label>
+                <textarea name="Anl" id="anl" class="w-100 border rounded bg-warning"></textarea>
+            </div>
+        </div>
+        <!-- Button mit type="button" -->
+        <button type="button" onclick="pasteFromClipboard()" class="btn btn-primary">Einfügen aus Zwischenablage</button>
+
+
+        <div class="row pt-3">
                 <div class="col-md-12">
 
                 </div>
